@@ -55,6 +55,12 @@ def get_details(url):
     except:
         stamp['raw_text'] = None
         
+    try:
+        condition = html.select('.prodicons img')[0].get('title').strip()
+        stamp['condition'] = condition
+    except:
+        stamp['condition'] = None    
+        
 
     stamp['currency'] = 'GBP'
     
